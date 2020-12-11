@@ -2,10 +2,10 @@ var app = new Vue (
   {
     el: '#wrapper' ,
     created: function() {
-      this.activeChat = this.contacts[0]
+      this.activeUser = this.contacts[0]
     },
     data: {
-      activeChat: {} ,
+      activeUser: {} ,
       contacts: [
       	{
       		name: 'Michele',
@@ -91,7 +91,6 @@ var app = new Vue (
       		],
       	},
       ]
-
-    }
+    },
   }
 )

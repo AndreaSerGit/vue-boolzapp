@@ -34,7 +34,7 @@
         </div>
 
         <ul>
-          <li v-for="persone in contacts">
+          <li v-for="(persone, index) in contacts" @click="activeUser = persone">
             <img :src="persone.avatar" alt="">
             <h5>{{persone.name}}</h5>
           </li>
@@ -43,16 +43,16 @@
       </div>
       <div class="chat">
         <div class="header-chat">
-          <!-- <div class="utente-momentanio">
-            <img :src:"contacts.avatar" alt="">
-            <h3>{{persone.name[0]}}</h3>
+          <div class="active-User">
+            <img :src="activeUser.avatar" alt="">
+            <h3>{{activeUser.name}}</h3>
 
-          </div> -->
+          </div>
 
         </div>
         <div class="main-chat">
           <ul>
-            <li v-for="message in activeChat.messages" :class= "(message.status == 'sent') ? 'green' : 'white'"><p>{{message.text}}</p> <span>{{message.date}}</span> </li>
+            <li v-for="message in activeUser.messages" :class= "(message.status == 'sent') ? 'green' : 'white'"><p>{{message.text}}</p> <span>{{message.date}}</span> </li>
           </ul>
 
         </div>

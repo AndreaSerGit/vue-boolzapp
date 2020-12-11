@@ -112,7 +112,9 @@ body {
   line-height: 60px;
   background-color:#EAEAEA;
 }
-
+.active-User {
+  display: flex;
+}
 .main-chat {
   height: calc(100% - 110px);
   background-image: url("https://preview.redd.it/qwd83nc4xxf41.jpg?width=640&crop=smart&auto=webp&s=e82767fdf47158e80604f407ce4938e44afc6c25");
