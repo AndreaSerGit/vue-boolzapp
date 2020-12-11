@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient( #00BFA5 20%, #D6DBD8 0%);
+  height: 100vh;
+  position: relative;
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  background-color: grey;
+  display: flex;
+  box-shadow: 1px 1px 5px 5px grey;
+}
+.utenti {
+  background-color: #FFFFFF;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+}
+.header-utente {
+  height: 60px;
+  line-height: 60px;
+  background-color:#EAEAEA;
+  border-right: 1px solid grey;
+}
+.header-utente::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.header-utente img {
+  height: 40px;
+  vertical-align: middle;
+  margin: 10px;
+}
+.icons {
+  float: right;
+  margin-right: 10px;
+}
+.icons i {
+  margin: 5px;
+  color: grey;
+}
+.notifiche {
+  height: 65px;
+  background-color:#8EDAFC;
+  display: flex;
+  align-items: center;
+}
+.notifiche i {
+  background-color: #FFFFFF;
+  color: #8EDAFC;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 5px 10px 5px 8px;
+  float: left;
+}
+.cerca {
+  height: 40px;
+  padding: 5px;
+  background-color:#EAEAEA;
+  display: flex;
+}
+.cerca button {
+  background: #FFFFFF;
+  width: 20%;
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  outline: none;
+  margin-right: 2px;
+}
+.cerca input {
+  width: 80%;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+
+.chat {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-chat {
+  height: 60px;
+  line-height: 60px;
+  background-color:#EAEAEA;
+}
+
+.main-chat {
+  height: calc(100% - 110px);
+  background-color: yellow;
+  background-image: url("https://preview.redd.it/qwd83nc4xxf41.jpg?width=640&crop=smart&auto=webp&s=e82767fdf47158e80604f407ce4938e44afc6c25");
+  background-size: contain;
+  overflow-y: scroll;
+}
+
+.footer-chat {
+  height: 50px;
+  background-color: red;
+}
