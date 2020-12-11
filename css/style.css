@@ -91,6 +91,7 @@ body {
 }
 .utenti ul {
   list-style: none;
+  overflow-y: scroll;
 }
 .utenti ul li {
   height: 60px;
@@ -118,6 +119,38 @@ body {
   background-size: contain;
   overflow-y: scroll;
 }
+.main-chat ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.main-chat ul li {
+  position: relative;
+  height: 50px;
+  margin: 10px;
+  width: 300px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.green {
+  background-color: #D5F9BA;
+  align-self: flex-end;
+}
+.white {
+  background-color: #FFFFFF;
+  align-self: flex-start;
+}
+.main-chat ul li p {
+  position: absolute;
+  top: 50%;
+  transform : translate(0 , -50%);
+}
+.main-chat ul li span {
+  font-size: 10px;
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+}
 
 .footer-chat {
   height: 50px;
@@ -133,6 +166,7 @@ body {
   border-radius: 8px;
   padding: 10px;
   border: none;
+  outline: none;
 }
 .smile, .microphone {
   width: 15%;

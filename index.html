@@ -43,9 +43,17 @@
       </div>
       <div class="chat">
         <div class="header-chat">
+          <!-- <div class="utente-momentanio">
+            <img :src:"contacts.avatar" alt="">
+            <h3>{{persone.name[0]}}</h3>
+
+          </div> -->
 
         </div>
         <div class="main-chat">
+          <ul>
+            <li v-for="message in activeChat.messages" :class= "(message.status == 'sent') ? 'green' : 'white'"><p>{{message.text}}</p> <span>{{message.date}}</span> </li>
+          </ul>
 
         </div>
         <div class="footer-chat">

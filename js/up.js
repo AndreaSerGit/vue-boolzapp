@@ -1,7 +1,11 @@
 var app = new Vue (
   {
     el: '#wrapper' ,
+    created: function() {
+      this.activeChat = this.contacts[0]
+    },
     data: {
+      activeChat: {} ,
       contacts: [
       	{
       		name: 'Michele',
