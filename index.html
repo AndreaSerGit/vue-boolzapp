@@ -41,6 +41,7 @@
             <div class="preview">
               <h5>{{persone.name}}</h5>
               <p>{{persone.messages[persone.messages.length -1].text}}</p>
+              <span>{{persone.messages[persone.messages.length -1].date}}</span>
             </div>
           </li>
         </ul>
@@ -52,7 +53,7 @@
             <img :src="activeUser.avatar" alt="">
             <div class="last-log">
               <h3>{{activeUser.name}}</h3>
-              <p>Ultimo accesso oggi alle <span>{{activeUser.messages[activeUser.messages.length -1].date}}</span></p>
+              <p>Ultimo accesso <span>{{activeUser.messages[activeUser.messages.length -1].date}}</span></p>
             </div>
           </div>
           <div class="settings">

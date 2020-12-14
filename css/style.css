@@ -104,6 +104,14 @@ a {
   border-top: 0.5px solid lightgrey;
   cursor: pointer;
   align-items: center;
+  position: relative;
+}
+.utenti ul li span {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 10px;
+  color: lightgrey;
 }
 .preview p {
   font-size: 10px;

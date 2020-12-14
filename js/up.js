@@ -107,7 +107,7 @@ var app = new Vue (
       aggiungiElemento: function() {
           var nuovoElemento =
             {
-              date: 'Ora',
+              date: '15/12/2020 Ora',
               text: this.nuovoMessaggio ,
               status: 'sent'
             };
@@ -116,7 +116,7 @@ var app = new Vue (
             setTimeout(function() {
               var rispostaPredefinita =
                 {
-                  date: 'Ora',
+                  date: '15/12/2020 Ora',
                   text: 'Ok' ,
                   status: 'received'
                 };
