@@ -14,9 +14,9 @@
           <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="">
           <span>Andrea Serboli</span>
           <div class="icons">
-            <i class="fas fa-circle-notch"></i>
-            <i class="fas fa-comment-alt"></i>
-            <i class="fas fa-ellipsis-v"></i>
+            <a href="#"><i class="fas fa-circle-notch"></i></a>
+            <a href="#"><i class="fas fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
 
         </div>
@@ -29,14 +29,18 @@
 
         </div>
         <div class="cerca">
-          <button type="button" name="button"><i class="fas fa-search"></i></button>
-          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          <button type="button" name="button"><i class="fas fa-search" ></i></button>
+          <input  type="text" name="" value="" v-model="ricerca"
+          v-on:keyup.enter="filtraElemento" placeholder="Cerca o inizia una nuova chat">
         </div>
 
         <ul>
-          <li v-for="(persone, index) in contacts" @click="activeUser = persone">
+          <li v-for="(persone, index) in listaFiltrata" @click="activeUser = persone">
             <img :src="persone.avatar" alt="">
-            <h5>{{persone.name}}</h5>
+            <div class="preview">
+              <h5>{{persone.name}}</h5>
+              <p>{{persone.messages[0].text}}</p>
+            </div>
           </li>
         </ul>
 
@@ -45,8 +49,15 @@
         <div class="header-chat">
           <div class="active-User">
             <img :src="activeUser.avatar" alt="">
-            <h3>{{activeUser.name}}</h3>
-
+            <div class="last-log">
+              <h3>{{activeUser.name}}</h3>
+              <p>Ultimo accesso oggi alle <span>{{activeUser.messages[0].date}}</span></p>
+            </div>
+          </div>
+          <div class="settings">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-paperclip"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
 
         </div>

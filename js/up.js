@@ -3,9 +3,12 @@ var app = new Vue (
     el: '#wrapper' ,
     created: function() {
       this.activeUser = this.contacts[0]
+      this.listaFiltrata = this.contacts
     },
     data: {
       activeUser: {} ,
+      ricerca: '',
+      listaFiltrata: [],
       contacts: [
       	{
       		name: 'Michele',
@@ -74,7 +77,7 @@ var app = new Vue (
       		],
       	},
       	{
-      		name: 'Luisa',
+      		name: 'Martina',
       		avatar: 'https://cdn.iconscout.com/icon/free/png-512/avatar-373-456325.png',
       		visible: true,
       		messages: [
@@ -92,5 +95,14 @@ var app = new Vue (
       	},
       ]
     },
+    methods: {
+    filtraElemento: function() {
+        this.listaFiltrata = this.contacts.filter(
+          (element) => {
+            return element.name.toUpperCase().includes(this.ricerca.toUpperCase())
+            }
+        )
+      },
+    }
   }
 )

@@ -8,6 +8,10 @@ body {
   height: 100vh;
   position: relative;
 }
+a {
+  text-decoration: none;
+  color: #B1B1B1;
+}
 
 #wrapper {
   position: absolute;
@@ -49,7 +53,6 @@ body {
 }
 .icons i {
   margin: 5px;
-  color: grey;
 }
 .notifiche {
   height: 65px;
@@ -89,15 +92,21 @@ body {
   outline: none;
   padding-left: 10px;
 }
+
 .utenti ul {
   list-style: none;
   overflow-y: scroll;
 }
 .utenti ul li {
   height: 60px;
-  line-height: 60px;
   display: flex;
   border-top: 0.5px solid lightgrey;
+  cursor: pointer;
+  align-items: center;
+}
+.preview p {
+  font-size: 10px;
+  color: lightgrey;
 }
 
 
@@ -109,11 +118,25 @@ body {
 
 .header-chat {
   height: 60px;
-  line-height: 60px;
   background-color:#EAEAEA;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .active-User {
   display: flex;
+  align-items: center;
+  height: 100%;
+}
+.last-log p {
+  font-size: 12px;
+}
+
+.settings {
+  margin-right: 15px;
+}
+.settings i {
+  margin-left: 8px;
 }
 .main-chat {
   height: calc(100% - 110px);
