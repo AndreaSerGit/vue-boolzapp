@@ -9,12 +9,6 @@ var app = new Vue (
       activeUser: {} ,
       ricerca: '',
       nuovoMessaggio: '',
-      nuovoElemento:
-        {
-          date: 'Ora',
-          text: this.nuovoMessaggio ,
-          status: 'sent'
-        },
       listaFiltrata: [],
       contacts: [
       	{
@@ -111,8 +105,23 @@ var app = new Vue (
         )
       },
       aggiungiElemento: function() {
-          this.activeUser.messages.push(this.nuovoElemento)
+          var nuovoElemento =
+            {
+              date: 'Ora',
+              text: this.nuovoMessaggio ,
+              status: 'sent'
+            };
+          this.activeUser.messages.push(nuovoElemento);
           this.nuovoMessaggio = '';
+            setTimeout(function() {
+              var rispostaPredefinita =
+                {
+                  date: 'Ora',
+                  text: 'Ok' ,
+                  status: 'received'
+                };
+              app.activeUser.messages.push(rispostaPredefinita);
+            }, 1000);
         },
     }
   }
