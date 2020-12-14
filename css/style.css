@@ -83,6 +83,7 @@ a {
   border: none;
   outline: none;
   margin-right: 2px;
+  cursor: pointer;
 }
 .cerca input {
   width: 80%;
