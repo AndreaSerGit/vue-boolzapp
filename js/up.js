@@ -8,6 +8,13 @@ var app = new Vue (
     data: {
       activeUser: {} ,
       ricerca: '',
+      nuovoMessaggio: '',
+      nuovoElemento:
+        {
+          date: 'Ora',
+          text: this.nuovoMessaggio ,
+          status: 'sent'
+        },
       listaFiltrata: [],
       contacts: [
       	{
@@ -103,6 +110,10 @@ var app = new Vue (
             }
         )
       },
+      aggiungiElemento: function() {
+          this.activeUser.messages.push(this.nuovoElemento)
+          this.nuovoMessaggio = '';
+        },
     }
   }
 )
