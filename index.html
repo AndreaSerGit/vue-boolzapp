@@ -65,7 +65,10 @@
         </div>
         <div class="main-chat">
           <ul>
-            <li v-for="message in activeUser.messages" :class= "(message.status == 'sent') ? 'green' : 'white'"><p>{{message.text}}</p> <span>{{message.date}}</span> </li>
+            <li v-for="(message, index) in activeUser.messages" :class= "(message.status == 'sent') ? 'green' : 'white'" v-on:click="eNascosto = !eNascosto"><p>{{message.text}}</p> <span>{{message.date}}</span>
+            <div class="cancella" v-if="!eNascosto">
+              <p class="delete" @click="cancellaMessaggio(index)">Cancella Messaggio</p>
+            </div></li>
           </ul>
 
         </div>
