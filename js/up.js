@@ -10,7 +10,7 @@ var app = new Vue (
       ricerca: '',
       nuovoMessaggio: '',
       listaFiltrata: [],
-      eNascosto: true ,
+      itemToShow: -1 ,
       contacts: [
       	{
       		name: 'Michele',
@@ -126,7 +126,7 @@ var app = new Vue (
         },
         cancellaMessaggio: function(index) {
           this.activeUser.messages.splice(index, 1)
-        }
+        },
     }
   }
 )
