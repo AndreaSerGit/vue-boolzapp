@@ -126,6 +126,7 @@ var app = new Vue (
         },
         cancellaMessaggio: function(index) {
           this.activeUser.messages.splice(index, 1)
+
         },
         cambioIndex: function(index) {
           if(this.oggettoDaMostrare == index) {

@@ -41,8 +41,10 @@
             <img :src="persone.avatar" alt="">
             <div class="preview">
               <h5>{{persone.name}}</h5>
-              <p>{{persone.messages[persone.messages.length -1].text}}</p>
-              <span>{{persone.messages[persone.messages.length -1].date}}</span>
+              <p v-if="persone.messages.length > 0">{{persone.messages[persone.messages.length -1].text}}</p>
+              <p v-else></p>
+              <span v-if="persone.messages.length > 0">{{persone.messages[persone.messages.length -1].date}}</span>
+              <span v-else></span>
             </div>
           </li>
         </ul>
@@ -54,7 +56,8 @@
             <img :src="activeUser.avatar" alt="">
             <div class="last-log">
               <h3>{{activeUser.name}}</h3>
-              <p>Ultimo accesso <span>{{activeUser.messages[activeUser.messages.length -1].date}}</span></p>
+              <p>Ultimo accesso <span v-if="activeUser.messages.length > 0">{{activeUser.messages[activeUser.messages.length -1].date}}</span>
+              <span v-else>nascosto</span></p>
             </div>
           </div>
           <div class="settings">
