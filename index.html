@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -65,8 +66,8 @@
         </div>
         <div class="main-chat">
           <ul>
-            <li v-for="(message, index) in activeUser.messages" :class= "(message.status == 'sent') ? 'green' : 'white'" @click="itemToShow =index"><p>{{message.text}}</p> <span>{{message.date}}</span>
-            <div class="cancella" v-show="itemToShow == index">
+            <li v-for="(message, index) in activeUser.messages" :class= "(message.status == 'sent') ? 'green' : 'white'" @click="cambioIndex(index)"><p>{{message.text}}</p> <span>{{message.date}}</span>
+            <div class="cancella" v-show="oggettoDaMostrare == index">
               <p class="delete" @click="cancellaMessaggio(index)">Cancella Messaggio</p>
             </div></li>
           </ul>

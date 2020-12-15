@@ -10,7 +10,7 @@ var app = new Vue (
       ricerca: '',
       nuovoMessaggio: '',
       listaFiltrata: [],
-      itemToShow: -1 ,
+      oggettoDaMostrare: -1 ,
       contacts: [
       	{
       		name: 'Michele',
@@ -108,7 +108,7 @@ var app = new Vue (
       aggiungiElemento: function() {
           var nuovoElemento =
             {
-              date: '15/12/2020 Ora',
+              date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
               text: this.nuovoMessaggio ,
               status: 'sent'
             };
@@ -117,7 +117,7 @@ var app = new Vue (
             setTimeout(function() {
               var rispostaPredefinita =
                 {
-                  date: '15/12/2020 Ora',
+                  date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                   text: 'Ok' ,
                   status: 'received'
                 };
@@ -127,6 +127,13 @@ var app = new Vue (
         cancellaMessaggio: function(index) {
           this.activeUser.messages.splice(index, 1)
         },
+        cambioIndex: function(index) {
+          if(this.oggettoDaMostrare == index) {
+            this.oggettoDaMostrare = -1
+          } else {
+            this.oggettoDaMostrare = index
+          }
+        }
     }
   }
 )

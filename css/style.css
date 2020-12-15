@@ -96,7 +96,7 @@ a {
 
 .utenti ul {
   list-style: none;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .utenti ul li {
   height: 60px;
